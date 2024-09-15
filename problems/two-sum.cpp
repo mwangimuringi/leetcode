@@ -1,27 +1,40 @@
-#include <unordered_map>
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
-    class Solution {
-    public:
-        vector<int> twoSum(vector<int>& nums, int target)
+class Solutions
+{
+public:
+    static vector<int> twoSum(const vector<int> &nums, int target)
+    {
+        vector<int> ret;
+        int size = nums.size();
+
+        for (int i = 0; i < size - 1; i++)
         {
-            vector<int> ret;
-            int size = nums.size();
-            int diff;
-            unordered_map<int, int> map;
-            for (int i = 0; i < size; i++)
+            for (int j = i + 1; j < size; j++)
             {
-                diff = target - nums[i];
-                if (map.find(diff) != map.end() && map.find(diff) -> second != i) {
-                    ret.push_back(i);
-                    ret.push_back(map.find(diff) -> second);
+                if (nums[i] + nums[j] == target)
+                {
+                    ret.push_back(static_cast<int>(i));
+                    ret.push_back(static_cast<int>(j));
                     return ret;
                 }
-                map[nums[i]] = i;
-            };
-            return ret;
+            }
         }
-    };
+        return ret;
+    }
+};
 
+int main() {
+    vector<int> nums = {2, 7, 11, 15};
+    int target = 9;
+    vector<int> ret = Solutions::twoSum(nums, target);
+    for (int idx : ret) {
+        cout << idx << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
