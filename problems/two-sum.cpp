@@ -9,12 +9,11 @@ public:
     static vector<int> twoSum(const vector<int> &nums, int target)
     {
         vector<int> ret;
-        // Use size_t for indexing
-        size_t size = nums.size();
+        int size = nums.size();
 
-        for (size_t i = 0; i < size - 1; i++)
+        for (int i = 0; i < size - 1; i++)
         {
-            for (size_t j = i + 1; j < size; j++)  // Avoid comparing the same element with itself
+            for (int j = i + 1; j < size; j++)
             {
                 if (nums[i] + nums[j] == target)
                 {
@@ -31,9 +30,8 @@ public:
 int main() {
     vector<int> nums = {2, 7, 11, 15};
     int target = 9;
-    vector<int> result = Solutions::twoSum(nums, target);
-
-    for (int idx : result) {
+    vector<int> ret = Solutions::twoSum(nums, target);
+    for (int idx : ret) {
         cout << idx << " ";
     }
     cout << endl;
