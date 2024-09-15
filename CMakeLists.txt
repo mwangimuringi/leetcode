@@ -9,4 +9,5 @@ include_directories(problems)
 add_executable(leetcode
     problems/two-sum.cpp
     .gitignore
-    README.md)
+    README.md
+        problems/longest-substring.cpp)
