@@ -10,4 +10,6 @@ add_executable(leetcode
     problems/two-sum.cpp
     .gitignore
     README.md
-        problems/longest-substring.cpp)
+        problems/longest-substring.cpp
+        problems/merge-two-sorted-list.cpp
+)
