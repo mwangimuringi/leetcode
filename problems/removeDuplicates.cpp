@@ -4,19 +4,25 @@
 //using constant space
 
 #include <vector>
+#include <bits/streambuf_iterator.h>
 using namespace std;
 
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-        int j = 0 , i = 0;
-        for (i = 0, i < n-1, i++);
+        vector<int> original;
+        vector<int> :: iterator i;
+        for(i = nums.begin(); i != nums.end(); i++)
         {
-            if (nums[i] != nums[i+1])
-            {
-                nums[j] = nums[i];
-                j++;
+            int elem = *i;
+            if(find(original.begin(), original.end(), elem) != original.end()){
+                nums.erase(i);
+                i--;
+            }
+            else {
+                original.push_back(*i);
             }
         }
+        return nums.size();
     }
 };
