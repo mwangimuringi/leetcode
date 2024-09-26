@@ -13,4 +13,5 @@ add_executable(leetcode
         problems/longest-substring.cpp
         problems/merge-two-sorted-list.cpp
         problems/removeDuplicates.cpp
+        problems/remove-element.cpp
 )
